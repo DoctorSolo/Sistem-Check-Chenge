@@ -1,10 +1,10 @@
 from DataSetMoneyConfig import DataSetMoneyConfig
 
 class PhisicalPayment:
-    chenge = DataSetMoneyConfig().arrMoneys
+    
     
     def __init__(self, value: list, money: list, PRICE: float):
-        self.DL_ = value[::-1] # DL is a play money, valores is a list
+        self.DL_ = value        # DL is a play money, valores is a list
         
         self.money = money      # client payment
         self.PRICE = PRICE      # Price product
@@ -39,9 +39,9 @@ class PhisicalPayment:
             if self.DL_[i] == 0:
                 continue
             else:
-                self.chenge[i] += self.DL_[i]
+                self.DL_[i] += self.DL_[i]
                 self.DL_[i] -= 1
             
-            if sum(self.chenge) == (money_t - self.PRICE):
+            if sum(self.DL_) == (money_t - self.PRICE):
                 self.DL_[i:] += self.money[i:]
                 return True

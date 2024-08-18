@@ -21,3 +21,4 @@ class Product:
     def choiseP(self, category, product):
         print(self.dictProduct[category][product])
         return self.dictProduct[category][product]
+    
