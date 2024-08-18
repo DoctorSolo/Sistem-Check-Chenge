@@ -1,4 +1,4 @@
-class DataSetMoneyConfig():
+class DataSetMoneyConfig:
     arrMoneys = [0.00,         # 100
                  0.00,         # 50
                  0.00,         # 20

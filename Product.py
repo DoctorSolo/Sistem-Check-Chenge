@@ -1,5 +1,3 @@
-import pandas as pd
-
 class Product:
     dictProduct = {
         "Limpeza": {"Alcool 70": 20.00, 
@@ -17,8 +15,9 @@ class Product:
     
     
     def showProduct(self):
-        pd.DateOffset(self.dictProduct)
+        print(self.dictProduct)
     
     
     def choiseP(self, category, product):
+        print(self.dictProduct[category][product])
         return self.dictProduct[category][product]
