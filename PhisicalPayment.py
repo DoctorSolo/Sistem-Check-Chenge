@@ -1,5 +1,7 @@
+from DataSetMoneyConfig import DataSetMoneyConfig
+
 class PhisicalPayment:
-    chenge = []
+    chenge = DataSetMoneyConfig.getArr()
     
     def __init__(self, value: list, money: list, PRICE: float):
         self.DL_ = value[::-1] # DL is a play money, valores is a list
