@@ -1,4 +1,4 @@
-from DataSetMoneyConfig import DataSetMoneyConfig
+from Chenge import Chenge
 
 class PhisicalPayment:
     
@@ -9,6 +9,14 @@ class PhisicalPayment:
         self.money = money      # client payment
         self.PRICE = PRICE      # Price product
 
+    
+    def payment(self) -> None:
+        if self.checkChenge(self.money):
+            c = Chenge(self.DL_)
+            print(c)
+        else:
+            print("Erro")
+            
     
     # check chege
     def checkChenge(self, money: list) -> bool:
