@@ -1,12 +1,12 @@
 from Chenge import Chenge
-from DataSetMoneyConfig import DataSetMoneyConfig as dt
+from DataSetMoneyConfig import arrMoneys
 
 
 class PhisicalPayment:
-    def __init__(self, value: dict, money: list, PRICE: float):
-        self.DL_ = value        # DL is a play money, valores is a list
-        
-        self.money = money     # client payment
+    DL_ = Chenge.chenge        # DL is a play money, valores is a list
+    
+    def __init__(self, money: list, PRICE: float):
+        self.money = money      # client payment
         self.PRICE = PRICE      # Price product
 
     
@@ -18,11 +18,11 @@ class PhisicalPayment:
     
     
     def convertMoney(self, money: list) -> dict:
-        libr = dt.arrMoneys
+        libr = arrMoneys
         for i in range(len(money)):
-            for k in list(dt.arrMoneys.keys()):
+            for k in list(arrMoneys.keys()):
                 if k == money[i]:
-                    libr[k] += money[i]
+                    libr[k] += 1
         
         return libr
     
@@ -45,8 +45,8 @@ class PhisicalPayment:
         
         # if the total sum is equal to the price
         elif money_t == self.PRICE:
-            for k in list(self.DL_.keys()):
-                self.DL_[k] += money[k]
+            # for k in list(self.DL_.keys()):
+            #     self.DL_[k] += money[k]
             return True
         
         # Check if there is chenge
@@ -65,7 +65,7 @@ class PhisicalPayment:
             if k > self.PRICE:
                 continue
             else:
-                for i in range(int(money[k])):
+                for i in range(money[k]):
                     if (cont_money_c + (money[k] * i)) > (money_t - self.PRICE):
                         continue
                     else:

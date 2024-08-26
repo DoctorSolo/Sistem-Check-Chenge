@@ -1,8 +1,8 @@
-from DataSetMoneyConfig import DataSetMoneyConfig
+from DataSetMoneyConfig import arrMoneys
 
 class Chenge:
-    chenge = DataSetMoneyConfig().arrMoneys
+    chenge = arrMoneys
     
     def __init__(self, chenge: dict) -> None:
         self.chenge = chenge
-        print(self.chenge)
+        print(chenge)
