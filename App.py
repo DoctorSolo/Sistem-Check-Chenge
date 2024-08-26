@@ -11,4 +11,6 @@ pc0PM = [20.00]
 PhisicalPayment(pc0PM, pc0).payment()
 
 pc1 = client1.choiseP("Comida","Queijo queijo")
+pc1PM = [50.00, 20.00]
+PhisicalPayment(pc1PM, pc1).payment()
 

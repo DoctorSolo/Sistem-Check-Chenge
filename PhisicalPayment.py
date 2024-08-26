@@ -54,8 +54,6 @@ class PhisicalPayment:
             return False
         
         
-        
-        
         # give chenge and receive the money
         cont_money_c = 0
         for k in list(self.DL_.keys()):
