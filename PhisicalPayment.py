@@ -18,9 +18,9 @@ class PhisicalPayment:
     
     
     def convertMoney(self, money: list) -> dict:
-        libr = arrMoneys
+        libr = arrMoneys.copy()
         for i in range(len(money)):
-            for k in list(arrMoneys.keys()):
+            for k in list(libr.keys()):
                 if k == money[i]:
                     libr[k] += 1
         
@@ -45,8 +45,8 @@ class PhisicalPayment:
         
         # if the total sum is equal to the price
         elif money_t == self.PRICE:
-            # for k in list(self.DL_.keys()):
-            #     self.DL_[k] += money[k]
+            for k in list(self.DL_.keys()):
+                self.DL_[k] += money[k]
             return True
         
         # Check if there is chenge

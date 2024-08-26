@@ -1,7 +1,7 @@
 from DataSetMoneyConfig import arrMoneys
 
 class Chenge:
-    chenge = arrMoneys
+    chenge = arrMoneys.copy()
     
     def __init__(self, chenge: dict) -> None:
         self.chenge = chenge
