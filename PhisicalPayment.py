@@ -60,7 +60,7 @@ class PhisicalPayment:
             self.DL_[k] += money[k]
         
         for k in list(self.DL_.keys()):
-            if k > self.PRICE:
+            if (money[k] == 0):
                 continue
             else:
                 for i in range(money[k]):
@@ -68,7 +68,7 @@ class PhisicalPayment:
                         continue
                     else:
                         self.DL_[k] -= 1
-                        cont_money_c += (money[k] * i)
+                        cont_money_c += (money[k])
                     
                     if cont_money_c == self.PRICE:
                         return True
