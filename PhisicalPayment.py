@@ -4,6 +4,7 @@ from DataSetMoneyConfig import arrMoneys
 
 class PhisicalPayment:
     DL_ = Chenge.chenge        # DL is a play money, valores is a list
+    returnChenge = arrMoneys.copy()
     
     def __init__(self, money: list, PRICE: float):
         self.money = money      # client payment
@@ -33,42 +34,26 @@ class PhisicalPayment:
         money_t = 0
         for k in list(money.keys()):
             money_t += k * money[k] # sum all money
-        
+  
         chenge_t = 0
         for k in list(self.DL_.keys()):
             chenge_t += k * self.DL_[k]
         
-              
-        # if the total is less than price, return false
-        if money_t < self.PRICE:
-            return False
+        chenge = float(money_t - self.PRICE)
         
-        # if the total sum is equal to the price
-        elif money_t == self.PRICE:
-            for k in list(self.DL_.keys()):
+        if (money_t >= self.PRICE) and (chenge_t >= chenge):
+            for k in list(money.keys()):
                 self.DL_[k] += money[k]
+            
+            chenge_t_money = 0
+            for k in list(money.keys()):
+                for i in range(money[k]):
+                    # print(f"chenge_t_money: {chenge_t_money}, k: {k}, i: {i}, money[k]{money[k]}, chenge: {chenge}")
+                    if ((chenge_t_money + k) <= chenge) and (money[k] > 0):
+                        self.DL_[k] -= 1
+                        self.returnChenge[k] += 1
+                        chenge_t_money += k
+            
             return True
         
-        # Check if there is chenge
-        elif chenge_t < (money_t - self.PRICE):
-            return False
-        
-        
-        # give chenge and receive the money
-        cont_money_c = 0
-        for k in list(self.DL_.keys()):
-            self.DL_[k] += money[k]
-        
-        for k in list(self.DL_.keys()):
-            if (money[k] == 0):
-                continue
-            else:
-                for i in range(money[k]):
-                    if (cont_money_c + (money[k] * i)) > (money_t - self.PRICE):
-                        continue
-                    else:
-                        self.DL_[k] -= 1
-                        cont_money_c += (money[k])
-                    
-                    if cont_money_c == self.PRICE:
-                        return True
+        return False
