@@ -48,12 +48,10 @@ class PhisicalPayment:
             chenge_t_money = 0
             for k in list(money.keys()):
                 for i in range(money[k]):
-                    # print(f"chenge_t_money: {chenge_t_money}, k: {k}, i: {i}, money[k]{money[k]}, chenge: {chenge}")
                     if ((chenge_t_money + k) <= chenge) and (money[k] > 0):
                         self.DL_[k] -= 1
                         self.returnChenge[k] += 1
                         chenge_t_money += k
             
             return True
-        
         return False
