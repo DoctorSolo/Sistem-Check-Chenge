@@ -3,14 +3,24 @@ from Data.DataSetMoneyConfig import arrMoneys
 
 
 class PhisicalPayment:
-    DL_ = Chenge.chenge        # DL is a play money, valores is a list
+# @DOCTOR SOLO
+#
+# This class calculates the physical change and 
+# returns it in the best way
+#
+
+    # DL is a play money, valores is a list
+    DL_ = Chenge.chenge
+    # Copy the array so as not to influence the original array
     returnChenge = arrMoneys.copy()
+    
     
     def __init__(self, money: list, PRICE: float):
         self.money = money      # client payment
         self.PRICE = PRICE      # Price product
 
     
+    # Main method
     def payment(self) -> None:
         if self.checkChenge(self.convertMoney(self.money)):
             c = Chenge(self.DL_)
@@ -18,6 +28,7 @@ class PhisicalPayment:
             print("Erro")
     
     
+    # Convert list in dictionary
     def convertMoney(self, money: list) -> dict:
         libr = arrMoneys.copy()
         for i in range(len(money)):
