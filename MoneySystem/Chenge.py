@@ -1,4 +1,4 @@
-from DataSetMoneyConfig import arrMoneys
+from Data.DataSetMoneyConfig import arrMoneys
 
 class Chenge:
     chenge = arrMoneys.copy()

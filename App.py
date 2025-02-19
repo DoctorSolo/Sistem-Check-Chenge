@@ -1,7 +1,7 @@
-from Product import Product
-from PhisicalPayment import PhisicalPayment
-from DigitalPayment import DigitalPayment
-from DigitalMoney import DigitalMoney
+from Data.Product import Product
+from MoneySystem.PhisicalPayment import PhisicalPayment
+from MoneySystem.DigitalPayment import DigitalPayment
+from MoneySystem.DigitalMoney import DigitalMoney
 
 client0 = Product()
 client1 = Product()

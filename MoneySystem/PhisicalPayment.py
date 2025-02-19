@@ -1,5 +1,5 @@
 from Chenge import Chenge
-from DataSetMoneyConfig import arrMoneys
+from Data.DataSetMoneyConfig import arrMoneys
 
 
 class PhisicalPayment:
