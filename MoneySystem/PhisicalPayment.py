@@ -1,4 +1,4 @@
-from Chenge import Chenge
+from MoneySystem.Chenge import Chenge
 from Data.DataSetMoneyConfig import arrMoneys
 
 

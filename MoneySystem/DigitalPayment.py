@@ -1,4 +1,4 @@
-from DigitalMoney import DigitalMoney
+from MoneySystem.DigitalMoney import DigitalMoney
 
 class DigitalPayment:
     def __init__(self, pay: float, PRICE: float) -> None:
